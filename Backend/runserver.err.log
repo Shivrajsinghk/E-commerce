@@ -1,0 +1,37 @@
+Watching for file changes with StatReloader
+C:\Users\shivraj\Documents\WebProjects\code\E-Commerce\Backend\backend\settings.py changed, reloading.
+Traceback (most recent call last):
+  File "C:\Users\shivraj\Documents\WebProjects\code\E-Commerce\Backend\manage.py", line 22, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\shivraj\Documents\WebProjects\code\E-Commerce\Backend\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\shivraj\Documents\WebProjects\code\E-Commerce\.venv\Lib\site-packages\django\core\management\__init__.py", line 443, in execute_from_command_line
+    utility.execute()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\shivraj\Documents\WebProjects\code\E-Commerce\.venv\Lib\site-packages\django\core\management\__init__.py", line 383, in execute
+    settings.INSTALLED_APPS
+  File "C:\Users\shivraj\Documents\WebProjects\code\E-Commerce\.venv\Lib\site-packages\django\conf\__init__.py", line 75, in __getattr__
+    self._setup(name)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\shivraj\Documents\WebProjects\code\E-Commerce\.venv\Lib\site-packages\django\conf\__init__.py", line 62, in _setup
+    self._wrapped = Settings(settings_module)
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\shivraj\Documents\WebProjects\code\E-Commerce\.venv\Lib\site-packages\django\conf\__init__.py", line 162, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "C:\Users\shivr\AppData\Roaming\uv\python\cpython-3.13.7-windows-x86_64-none\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1160, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1090, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\shivraj\Documents\WebProjects\code\E-Commerce\Backend\backend\settings.py", line 41
+    "corsheaders',
+    ^
+SyntaxError: unterminated string literal (detected at line 41)

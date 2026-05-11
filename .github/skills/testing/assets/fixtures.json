@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "username": "testuser",
+      "email": "test@example.com",
+      "password": "testpass123"
+    }
+  ],
+  "products": [
+    {
+      "name": "Test Product",
+      "description": "A product for testing",
+      "price": 29.99,
+      "category": "Electronics",
+      "image": null
+    }
+  ],
+  "categories": [
+    {
+      "name": "Electronics"
+    },
+    {
+      "name": "Clothing"
+    }
+  ]
+}
