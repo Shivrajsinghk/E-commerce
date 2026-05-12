@@ -95,7 +95,7 @@ def create_categories(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def get_cart(request):
     user = request.user
     cart, created = Cart.objects.get_or_create(user=user)
@@ -103,7 +103,7 @@ def get_cart(request):
     return Response(serializer.data)
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def add_to_cart(request):
     user = request.user
     cart, created = Cart.objects.get_or_create(user=user)
@@ -130,7 +130,7 @@ def add_to_cart(request):
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def remove_from_cart(request):
     user = request.user
     cart, created = Cart.objects.get_or_create(user=user)
@@ -147,7 +147,7 @@ def remove_from_cart(request):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def update_cart(request):
     user = request.user
     cart, created = Cart.objects.get_or_create(user=user)
@@ -215,12 +215,12 @@ def _create_cod_order(request):
     return Response({"message": "Order created successfully", "order_id": order.id}, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def create_cod_order(request):
     return _create_cod_order(request)
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def create_order(request):
     payment_method = request.data.get("payment_method")
     if payment_method == "COD":
@@ -240,7 +240,7 @@ def register(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def user_profile(request):
     profile, created = UserProfile.objects.get_or_create(user=request.user)
     # Fetch Profile
@@ -256,14 +256,14 @@ def user_profile(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def user_order_history(request):
     orders = Order.objects.filter(user=request.user).order_by('-created_at')
     serializer = OrderSerializer(orders, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def create_razorpay_order(request):
     try:
         client = razorpay.Client(auth=(
@@ -309,7 +309,7 @@ def create_razorpay_order(request):
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def verify_razorpay_payment(request):
     try:
         data = request.data
