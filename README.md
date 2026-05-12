@@ -1,6 +1,9 @@
-﻿# 🛒 E-Commerce Website
+# E-Commerce Platform
 
-A modern full-stack E-commerce web application built using React and Django.
+A full-stack e-commerce web application built using React, Django REST Framework, and PostgreSQL.
+
+## Live Demo
+https://e-commerce-hy3v.vercel.app
 
 ## 🚀 Features
 
